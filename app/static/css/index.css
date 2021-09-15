@@ -1,0 +1,49 @@
+h4{
+	text-align: center;
+}
+.navbar-light{
+	margin-top: 0px;
+	text-align: center;
+	background-color: lightgrey
+}
+
+.articles{
+	display: block
+}
+
+.source_section{
+	display: block;
+}
+.page_name{
+	text-align: center;
+}
+.page_name h1{
+	font-family: 'Black Ops One', cursive;
+}
+
+.source_section_name{
+	text-align: center;
+	font-family: 'Black Ops One', cursive;
+}
+.source:hover{
+	background-color: black
+}
+hr{
+	border-width: 2px;
+	border-color: lightgrey
+}
+
+
+footer{
+	margin-top: 100px;
+	background-color: lightgrey;
+	width:100%;
+	margin-bottom: 0px;
+	bottom: 0%
+}
+footer h4{
+	text-align: center;
+	font-weight: bold;
+	padding: 50px
+
+}
