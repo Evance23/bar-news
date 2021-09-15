@@ -1,0 +1,30 @@
+{% macro displayNewsList(category) %}
+    {% for news in category %}
+    <div class="col-md-2" class="source" style="margin: 20px;border: 2px solid #ccc; background-size: cover; background-color: lightgrey;height: 150px;padding: 60px 0px;border-radius: 4px;box-shadow: 0 0 25px rgb(39, 20, 212)">
+    <p class="text-center" style="font-style: bold;font-size: 18px;background-color: rgba(0,0,0,1);">{{news.id}}</p>
+    <p class="text-center" style="font-style: bold;font-size: 18px;background-color: rgba(0,0,0,1);">{{news.title}}</p>
+    <a href="/articles/{{news.id}}"><button type="button" class="btn btn-light">Read Articles</button></a></div> 
+{% endfor %}
+{% endmacro %}
+
+{% macro displayArticlesList(articles_list) %}
+{% for article in articles_list %}
+    <div style="margin: 20px;border: 2px solid #ccc;background-color: #FEFBF7;border-radius: 4px;box-shadow: 0 0 25px #ddd">
+            <div class="row" style="padding: 5px">
+                <div class="col-md-3" style="text-align: center">
+                    <!--<img src="{{article.image}}" alt="{{article.date}}" style="width: 100%; height: 100%"> -->
+                </div>
+                <div class="col-md-9">
+                    <a target="_blank" href="{{article.url}}">
+                        <h4 style="font-weight: 700">{{article.title}}</h4>
+                    </a>
+                    <p><small style="font-style: italic;">written by {{article.author}} on {{article.date}}</small></p>
+                    <p>{{article.description | truncate(135)}}</p>
+                    <a target="_blank" href="{{article.url}}">
+                        <button class="btn btn-sm btn-default" style="color: black">Read Articles</button>
+                    </a>
+                </div>
+            </div>
+    </div>
+{% endfor %}
+{% endmacro %}
