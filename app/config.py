@@ -12,7 +12,7 @@ class Prodconfig(Config):
 class DevConfig(Config):
     DEBUG = True
 
-config_options = {
-    'development':DevConfig,
-    'production':Prodconfig
-}
+# config_options = {
+#     'development':DevConfig,
+#     'production':Prodconfig
+# }
