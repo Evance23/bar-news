@@ -1,11 +1,86 @@
-from flask import render_template
-from app import app
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %} 
+<!--styles block-->
+{% block styles %}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
 
-# Views
-@app.route('/')
-def index():
+    <!--content block-->
+    {% block content %}
+    <div class="navbar navbar-light" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="padding-left:30%">
+    <!---entertainment, sports , tech , business, health , science, -->
+    <li><a href="#health">Health</a></li>
+    <li><a href="#business">Business</a></li>
+    <li><a href="#sports">Sports</a></li>
+    <li><a href="#entertainment">Entertainment</a></li>
+    <li><a href="#technology">Technology</a></li>
+</ul>
+</div>
+</div>
+</div>
+<main class="container-fluid">
+<div class="page_name"> 
+<h1>News Zone</h1> 
+</div>
+<!-- Business-->
+<hr />
+<div class="source_section">
+   <h3 id="business" class="source_section_name">Business News</h3>
+   <ul>
+      <div class="row">
+         {{ macro.displayNewsList(business) }}
+      </div>
+   </ul>
+</div>
+<!-- Sport-->
+<hr />
+<div class="source_section">
+   <h3 id="sport" class="source_section_name">Sports News</h3>
+   <ul>
+      <div class="row">
+         {{ macro.displayNewsList(sports) }}
+      </div>
+   </ul>
+</div>
+<!-- Entertainment-->
+<hr />
+<div class="source_section">
+   <h3 id="entertainment" class="source_section_name">Entertainment News</h3>
+   <ul>
+      <div class="row">
+         {{ macro.displayNewsList(entertainment) }}
+      </div>
+   </ul>
+</div>
+<!-- Technology-->
+<hr />
+<div class="source_section">
+   <h3 id="technology" class="source_section_name">Technology News</h3>
+   <ul>
+      <div class="row">
+         {{ macro.displayNewsList(technology) }}
+      </div>
+   </ul>
+</div>
 
-    '''
-    View root page function that returns the index page and its data
-    '''
-    return render_template('index.html') 
+<!-- health  -->
+<hr />
+<div class="source_section">
+<h3 id="health" class="source_section_name">Health News</h3>
+<ul>
+<div class="row">
+{{ macro.displayNewsList(health) }}
+</div>
+</ul>
+</div>
+
+</main>
+<footer>
+<h4>Powered by News API</h4>
+</footer>
+{% endblock %}
