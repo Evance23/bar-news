@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+<!-- Styles Block -->
+{% block styles %}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/articles.css')}}">
+{% endblock %}
+
+<!-- BLOCK CONTENT -->
+{% block content %}
+<main class="container-fluid">
+       
+    <div class="articles">
+        <h3> {{id}} Top News Articles</h3>
+		<hr />
+        <ul class="unstyled">
+            <div>
+        	   {{ macro.displayArticlesList(articles) }}
+            </div>
+        </ul>
+    </div>
+</main>
+<footer>
+    <h4>Powered by News API</h4>
+</footer>
+{% endblock %}
