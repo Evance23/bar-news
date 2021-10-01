@@ -9,7 +9,7 @@ manager.add_command('server',Server)
 @manager.command
 def test():
     '''
-    run the unit test 
+    run the unit test on file 
     '''
     import unittest
     tests= unittest.TestLoader().discover('tests')
