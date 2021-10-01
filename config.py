@@ -7,7 +7,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI="postgresql://cbcldllgjvprjb:e2901e5e72d6c578722b4b4e1826c9825d277c7bb2763fd6d17106c802b1bda4@ec2-44-193-228-249.compute-1.amazonaws.com:5432/d7djiapusrdeer?sslmode=require"
 
 class DevConfig(Config):
     DEBUG = True
